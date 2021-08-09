@@ -27,7 +27,7 @@ def token_required(our_flask_function):
     return decorated 
 
 import decimal
-from flask import json
+
 
 class JSONEncoder(json.JSONEncoder):
     def default(self, obj):

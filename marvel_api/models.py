@@ -46,7 +46,7 @@ class User(db.Model, UserMixin):
 
 class Marvel(db.Model):
     id = db.Column(db.String, primary_key = True)
-    name = db.Column(db.String(150), unique = True)
+    name = db.Column(db.String(150))
     description = db.Column(db.String(200), nullable = True)
     comics_appeared_in = db.Column(db.Integer)
     super_power = db.Column(db.String(200))
@@ -67,7 +67,7 @@ class Marvel(db.Model):
 
 class MarvelSchema(ma.Schema):
     class Meta:   
-        fields = ['id', 'name', 'description', 'comics_appeared_in', 'super_power', 'owner']
+        fields = ['id', 'name', 'description', 'comics_appeared_in', 'super_power']
 
 marvel_schema = MarvelSchema()
 marvels_schema = MarvelSchema(many=True)

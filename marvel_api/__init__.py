@@ -7,12 +7,12 @@ from flask_migrate import Migrate
 from .models import db, login_manager, ma
 from .helpers import JSONEncoder
 from flask_cors import CORS
+from .models import User
 
 
 
 app = Flask(__name__)
 app.config.from_object(Config)  
-
 app.register_blueprint(site)
 app.register_blueprint(auth)
 app.register_blueprint(api)
@@ -27,4 +27,3 @@ migrate = Migrate(app, db)
 app.json_encoder = JSONEncoder
 
 CORS(app)
-from .models import User
